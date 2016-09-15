@@ -20,10 +20,10 @@ public class Main2 {
   private static void execute6Logic() {
     ProcessEngine processEngine = new StandaloneProcessEngineConfiguration()
       .setActiviti5CompatibilityEnabled(true)
-      .setJdbcUrl("jdbc:mysql://127.0.0.1:3306/demo?characterEncoding=UTF-8")
+      .setJdbcUrl("jdbc:postgresql://localhost:5432/demo")
       .setJdbcUsername("alfresco")
       .setJdbcPassword("alfresco")
-      .setJdbcDriver("com.mysql.jdbc.Driver")
+      .setJdbcDriver("org.postgresql.Driver")
       .setDatabaseSchemaUpdate("true")
       .buildProcessEngine();
     

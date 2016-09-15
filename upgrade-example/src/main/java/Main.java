@@ -19,10 +19,10 @@ public class Main {
 
   private static void execute5Logic() {
     ProcessEngine processEngine = new StandaloneProcessEngineConfiguration()
-      .setJdbcUrl("jdbc:mysql://127.0.0.1:3306/demo?characterEncoding=UTF-8")
+      .setJdbcUrl("jdbc:postgresql://localhost:5432/demo")
       .setJdbcUsername("alfresco")
       .setJdbcPassword("alfresco")
-      .setJdbcDriver("com.mysql.jdbc.Driver")
+      .setJdbcDriver("org.postgresql.Driver")
       .setDatabaseSchemaUpdate("drop-create")
       .buildProcessEngine();
     

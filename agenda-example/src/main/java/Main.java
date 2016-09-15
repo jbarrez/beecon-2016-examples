@@ -3,6 +3,7 @@ import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.RepositoryService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
+import org.activiti.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration;
 import org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration;
 import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.runtime.ProcessInstance;
@@ -12,13 +13,7 @@ import org.activiti.engine.task.Task;
 public class Main {
   
   public static void main(String[] args) {
-    ProcessEngine processEngine = new StandaloneProcessEngineConfiguration()
-      .setJdbcUrl("jdbc:mysql://127.0.0.1:3306/demo?characterEncoding=UTF-8")
-      .setJdbcUsername("alfresco")
-      .setJdbcPassword("alfresco")
-      .setJdbcDriver("com.mysql.jdbc.Driver")
-      .setDatabaseSchemaUpdate("drop-create")
-      .buildProcessEngine();
+    ProcessEngine processEngine = new StandaloneInMemProcessEngineConfiguration().buildProcessEngine();
     
     RepositoryService repositoryService = processEngine.getRepositoryService();
     RuntimeService runtimeService = processEngine.getRuntimeService();
